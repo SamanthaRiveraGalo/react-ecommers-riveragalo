@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget/CartWidget';
+import './NavBar.css'
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -11,18 +13,17 @@ const NavBar = () => {
         <>
             <Navbar expand="lg" className="navbar navbar-expand-xl navbar-dark bg-dark">
                 <Container fluid>
-                    <Navbar.Brand href="#">Nike.</Navbar.Brand>
+                    <Link to='/' className='brand'>Nike.</Link>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
-                            className="me-auto my-2 my-lg-0"
+                            className="conteiner-nav me-auto my-2 my-lg-0"
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">Hombres</Nav.Link>
-                            <Nav.Link href="#action2">Mujeres</Nav.Link>
-                            <Nav.Link href="#action3">Accesorios</Nav.Link>
-    
+                            <NavLink to='/category/hombre' className='category'>Hombres</NavLink>
+                            <NavLink to='/category/mujer'className='category'>Mujeres</NavLink>
+
                         </Nav>
                         <Form className="d-flex">
                             <Form.Control
@@ -31,10 +32,12 @@ const NavBar = () => {
                                 className="me-2"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-success">Search</Button>
+                            <Button variant="outline-light">Search</Button>
                         </Form>
                     </Navbar.Collapse>
-                    <CartWidget/>
+                    <Link to='/cart' className='cart'>
+                        <CartWidget />
+                    </Link>
                 </Container>
             </Navbar>
         </>
