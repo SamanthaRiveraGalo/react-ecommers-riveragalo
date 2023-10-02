@@ -4,7 +4,7 @@ const DetalleCompra = () => {
   return (
     <div>
         <p>Su compra fue exitosa</p>
-        <p>su orden de compra es: aca iria el id</p>
+        <p>su orden de compra es: {id !== '' && <h3> Su orden de compra es {id}</h3>}</p>
     </div>
   )
 }

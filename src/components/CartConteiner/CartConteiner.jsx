@@ -12,7 +12,6 @@ const CartConteiner = () => {
   return (
     <>
 
-      {/* {id !== '' && <h3> Su orden de compra es {id}</h3>} */}
       {cartList.length > 0 ?
 
         <div className="conteiner-cart">

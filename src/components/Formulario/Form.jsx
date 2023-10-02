@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+
+//Estilo
+
 import './Form.css'
+import { Link } from 'react-router-dom'
 
 export const Form = ({ handleOnChange, dataForm, error, validation }) => {
 
@@ -76,9 +80,9 @@ export const Form = ({ handleOnChange, dataForm, error, validation }) => {
                     {error && error.phone && <span>{error.phone}</span>}
 
                 </div>
-                <div className='conteiner-button'>
+                <Link to={'/detalleCompra'} className='conteiner-button'>
                     <button className='boton-finalizar'>Finalizar Compra</button>
-                </div>
+                </Link>
 
             </form>
         </div>

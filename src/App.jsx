@@ -14,7 +14,7 @@ import Inicio from './components/Inicio/Inicio';
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Banner from './components/Banners/Banner';
+import DetalleCompra from './components/DetalleCompra/DetalleCompra';
 
 function App() {
 
@@ -22,12 +22,12 @@ function App() {
     <BrowserRouter>
       <CartContextProvider>
         <NavBar />
-        {/* <Banner/> */}
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/category/:cid' element={<ItemListContainer/>} />
           <Route path='/detalle/:pid' element={<ItemDetailConteiner/>} />
           <Route path='/cart' element={<CartConteiner />} />
+          <Route path='/detalleCompra' element={<DetalleCompra/>} />
         </Routes>
         <Footer />
       </CartContextProvider>
