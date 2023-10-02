@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import './Form.css'
 
 export const Form = ({ handleOnChange, dataForm, error, validation }) => {
 
@@ -8,7 +9,7 @@ export const Form = ({ handleOnChange, dataForm, error, validation }) => {
     const handleAddOrder = async (evt) => {
         evt.preventDefault()
 
-        if (validation()){
+        if (validation()) {
 
             const order = {}
             order.buyer = dataForm
@@ -36,40 +37,49 @@ export const Form = ({ handleOnChange, dataForm, error, validation }) => {
 
     return (
         <div>
-            <form onSubmit={handleAddOrder}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Ingrese el nombre"
-                    value={dataForm.name}
-                    onChange={handleOnChange}
-                />
-                {error && error.name && <span>{error.name}</span>}
-                <input
-                    type="text"
-                    name="lastname"
-                    placeholder="Ingrese su apellido"
-                    value={dataForm.lastname}
-                    onChange={handleOnChange}
-                />
-                {error && error.lastname && <span>{error.lastname}</span>}
-                <input
-                    type="text"
-                    name="email"
-                    placeholder="Ingrese su email"
-                    value={dataForm.email}
-                    onChange={handleOnChange}
-                />
-                {error && error.email && <span>{error.email}</span>}
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder="Ingrese su numero de telefono"
-                    value={dataForm.phone}
-                    onChange={handleOnChange}
-                />
-                {error && error.phone && <span>{error.phone}</span>}
-                <button>Finalizar Compra</button>
+            <form className='form' onSubmit={handleAddOrder}>
+                <h1>Formulario de Compra</h1>
+                <div className='conteiner-imput'>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Ingrese el nombre"
+                        value={dataForm.name}
+                        onChange={handleOnChange}
+                    />
+                    {error && error.name && <span>{error.name}</span>}
+                    <input
+                        type="text"
+                        name="lastname"
+                        placeholder="Ingrese su apellido"
+                        value={dataForm.lastname}
+                        onChange={handleOnChange}
+                    />
+                    {error && error.lastname && <span>{error.lastname}</span>}
+                </div>
+                <div className='conteiner-imput'>
+                    <input
+                        type="text"
+                        name="email"
+                        placeholder="Ingrese su email"
+                        value={dataForm.email}
+                        onChange={handleOnChange}
+                    />
+                    {error && error.email && <span>{error.email}</span>}
+                    <input
+                        type="text"
+                        name="phone"
+                        placeholder="Ingrese su numero de telefono"
+                        value={dataForm.phone}
+                        onChange={handleOnChange}
+                    />
+                    {error && error.phone && <span>{error.phone}</span>}
+
+                </div>
+                <div className='conteiner-button'>
+                    <button className='boton-finalizar'>Finalizar Compra</button>
+                </div>
+
             </form>
         </div>
     )

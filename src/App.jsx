@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       <CartContextProvider>
         <NavBar />
-        <Banner/>
+        {/* <Banner/> */}
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/category/:cid' element={<ItemListContainer/>} />

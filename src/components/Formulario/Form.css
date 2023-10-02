@@ -1,0 +1,31 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.conteiner-imput{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.conteiner-imput > input {
+    width: 50%;
+}
+
+.boton-finalizar{
+    background-color: #181818;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 0.3rem 0.5rem;
+    width: 10rem;
+    border: none;
+}
+
+.conteiner-button{
+    display: flex;
+    justify-content: center;
+}

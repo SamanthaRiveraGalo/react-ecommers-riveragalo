@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react"
-import { Form } from 'react-router-dom'
 import { formValidation } from './formValidation'
+import { Form } from './Form'
 
 const FormValidation = formValidation(Form)
 
