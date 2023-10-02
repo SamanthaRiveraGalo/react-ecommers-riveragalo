@@ -1,31 +1,45 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
-import { mFetch } from "../../utils/mockfetch"
 import ItemList from "../ItemList/itemList"
+
+//Estilo
+import './ItemListConteiner.css'
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([])
-  const {cid} = useParams()
+  const { cid } = useParams()
 
   useEffect(() => {
-    if(cid){
-      mFetch()
-        .then(respuesta => setProducts(respuesta.filter(product => cid === product.category)))
+    if (cid) {
+
+      const baseDatos = getFirestore()
+      const queryCollection = collection(baseDatos, 'products')
+      const queryFilter = query(queryCollection, where('category', '==', cid))
+      getDocs(queryFilter)
+        .then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
         .catch(err => console.log(err))
-    } else{
-      mFetch()
-      .then(respuesta => setProducts(respuesta))
-      .catch(err => console.log(err))
+
+    } else {
+
+      const baseDatos = getFirestore()
+      const queryCollection = collection(baseDatos, 'products')
+      getDocs(queryCollection)
+        .then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
+        .catch(err => console.log(err))
     }
 
-  },[cid])
+  }, [cid])
 
   return (
-    <div>
-      <ItemList products={products}/>
+    <div className="row conteiner-products">
+
+      <ItemList products={products} />
+
     </div>
   )
 }
+
 export default ItemListContainer

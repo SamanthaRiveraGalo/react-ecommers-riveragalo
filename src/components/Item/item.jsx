@@ -7,15 +7,13 @@ const Item = ({ product }) => {
       <div className="card w-25">
         <div className="card-body">
           <img className="card-img w-100" src={product.img} alt="zapatilla nike" />
-          <p>{product.name}</p>
-          <p>Precio:${product.price}</p>
-          <p>{product.description}</p>
+          <p className="card-nombre">{product.name}</p>
+          <p className="card-precio">Precio:${product.price}</p>
         </div>
-        <div className="card-footer">
+        <div className="card-footer" id="card-footer">
           <Link to={`/detalle/${product.id}`}>
             <button className="info">Mas informacion</button>
           </Link>
-          <button className="agregar-carrito">Agregar al carrito</button>
         </div>
       </div>
     </>

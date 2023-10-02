@@ -4,27 +4,31 @@
     align-items: center;
 }
 
-.sumar{
+.sumar , .restar{
     border-radius: 5px;
-    background-color: #000;
+    background-color: #181818;
     color: #fff;
-}
-
-.restar{
-    border-radius: 5px;
-    background-color: #000;
-    color: #fff;
+    padding: 0.2rem;
+    font-size: 18px;
+    width: 2rem;
 }
 
 .contador{
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .add{
+    font-size: 18px;
     border-radius: 5px;
     border: none;
-    background-color: #000;
+    background-color: #181818;
     color: #fff;
     padding: 0.5rem;
+}
+
+.add:hover{
+    background-color: #fff;
+    color: #181818;
+    border: 1px solid #181818;
 }

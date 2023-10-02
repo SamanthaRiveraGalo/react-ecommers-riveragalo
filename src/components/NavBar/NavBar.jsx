@@ -21,6 +21,7 @@ const NavBar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
+                            <NavLink to='/category/hombre' className='category'>Inicio</NavLink>
                             <NavLink to='/category/hombre' className='category'>Hombres</NavLink>
                             <NavLink to='/category/mujer'className='category'>Mujeres</NavLink>
 

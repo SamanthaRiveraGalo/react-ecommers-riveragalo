@@ -1,24 +1,25 @@
 import { useEffect, useState } from "react"
-import { mFetch } from "../../utils/mockfetch"
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import { useParams } from "react-router-dom"
+
 import ItemDetail from "./ItemDetail/ItemDetail"
 
 const ItemDetailConteiner = () => {
     //estado
     const [product, setProduct] = useState({})
-    const {pid} = useParams()
+    const { pid } = useParams()
     //api
     useEffect(() => {
-
-        mFetch(Number(pid))
-        .then(resp => setProduct(resp))
-        .catch(err => console.log(err))
-
+        const baseDatos = getFirestore()
+        const queryDoc = doc(baseDatos, 'products',  pid )
+        getDoc(queryDoc)
+            .then(resp => ({ id: resp.id, ...resp.data() }))
+            .then(resp => setProduct(resp))
     }, [])
 
     return (
         <div>
-            <ItemDetail  product={product}/>
+            <ItemDetail product={product} />
         </div>
     )
 }

@@ -6,10 +6,13 @@
     border-radius: 5px;
 }
 
-.card-footer {
+#card-footer{
     display: flex;
     gap: 0.5rem;
     border-top: none;
+    background-color: #fff;
+    padding: 0.5rem;
+    justify-content: right;
 }
 
 .info {
@@ -26,4 +29,14 @@
     background-color: #000;
     color: #fff;
     padding: 0.5rem;
+}
+
+.card-nombre{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-precio{
+    font-size: 18px;
+    font-weight: 600;
 }
