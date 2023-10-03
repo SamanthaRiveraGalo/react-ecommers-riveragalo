@@ -1,0 +1,16 @@
+.conteiner-detalle{
+    padding: 5rem 0;
+    display: flex;
+    gap: 5rem;
+}
+
+.compra-exitosa{
+    color: #186F65;
+    display: flex;
+    justify-content: center;
+}
+
+.orden{
+    display: flex;
+    justify-content: center;
+}

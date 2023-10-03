@@ -1,26 +1,26 @@
 import { useState } from "react"
 
-export const formValidation = (FormWrappedComponent) => {
-    const FormValidation = (props) => {
+export const FormValidation = (FormWrappedComponent) => {
+    const formValidation = (props) => {
         const [error, setError] = useState({})
 
         const validation = () => {
             let newError = {}
             let isValid = true
             if(!props.dataForm.name){
-                newError.name = '*El campo esta vacio'
+                newError.name = '*El campo nombre esta vacio'
                 isValid = false
             }
-            if(!props.dataForm.name){
-                newError.name = '*El campo esta vacio'
+            if(!props.dataForm.lastname){
+                newError.name = '*El campo apellido esta vacio'
                 isValid = false
             }
-            if(!props.dataForm.name){
-                newError.name = '*El campo esta vacio'
+            if(!props.dataForm.email){
+                newError.name = '*El campo email esta vacio'
                 isValid = false
             }
-            if(!props.dataForm.name){
-                newError.name = '*El campo esta vacio'
+            if(!props.dataForm.phone){
+                newError.name = '*El campo telefono esta vacio'
                 isValid = false
             }
             setError(newError)
@@ -34,5 +34,5 @@ export const formValidation = (FormWrappedComponent) => {
         />
 
     }
-    return FormValidation
+    return formValidation
 }

@@ -4,8 +4,9 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget/CartWidget';
-import './NavBar.css'
 import { Link, NavLink } from 'react-router-dom';
+
+import './NavBar.css'
 
 const NavBar = () => {
 
@@ -21,9 +22,9 @@ const NavBar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <NavLink to='/category/hombre' className='category'>Inicio</NavLink>
-                            <NavLink to='/category/hombre' className='category'>Hombres</NavLink>
-                            <NavLink to='/category/mujer'className='category'>Mujeres</NavLink>
+                            <NavLink to='/' className='category'>Inicio</NavLink>
+                            <NavLink to='/category/hombre' className='category'>Hombre</NavLink>
+                            <NavLink to='/category/mujer'className='category'>Mujer</NavLink>
 
                         </Nav>
                         <Form className="d-flex">

@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { useCartContext } from '../../Context/CartContext'
+import { useNavigate } from 'react-router-dom'
 
 //Estilo
-
 import './Form.css'
-import { Link } from 'react-router-dom'
 
 export const Form = ({ handleOnChange, dataForm, error, validation }) => {
 
-    const [id, setId] = useState('')
+    const { cartList, precioTotal, vaciarCarrito } = useCartContext()
+
+    const navigate = useNavigate()
 
     const handleAddOrder = async (evt) => {
+        
         evt.preventDefault()
 
         if (validation()) {
@@ -25,17 +28,11 @@ export const Form = ({ handleOnChange, dataForm, error, validation }) => {
             const queryDB = getFirestore()
             const orderCollection = collection(queryDB, 'orders')
             addDoc(orderCollection, order)
-                .then(({ id }) => setId())
-                .catch(err => console.log(err))
-                .finally(() => {
-                    setDataForm({
-                        name: '',
-                        phone: '',
-                        lastname: '',
-                        email: ''
-                    })
+                .then(({ id }) => {
+                    navigate('/detalleCompra/' + id)
                     vaciarCarrito()
                 })
+                .catch(err => console.log(err))
         }
     }
 
@@ -80,10 +77,7 @@ export const Form = ({ handleOnChange, dataForm, error, validation }) => {
                     {error && error.phone && <span>{error.phone}</span>}
 
                 </div>
-                <Link to={'/detalleCompra'} className='conteiner-button'>
-                    <button className='boton-finalizar'>Finalizar Compra</button>
-                </Link>
-
+                <button className='boton-finalizar'>Finalizar Compra</button>
             </form>
         </div>
     )
