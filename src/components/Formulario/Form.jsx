@@ -8,7 +8,7 @@ import './Form.css'
 
 export const Form = ({ handleOnChange, dataForm, error, validation }) => {
 
-    const { cartList, precioTotal, vaciarCarrito } = useCartContext()
+    const { cartList, precioTotal, deleteCart } = useCartContext()
 
     const navigate = useNavigate()
 
@@ -30,7 +30,7 @@ export const Form = ({ handleOnChange, dataForm, error, validation }) => {
             addDoc(orderCollection, order)
                 .then(({ id }) => {
                     navigate('/detalleCompra/' + id)
-                    vaciarCarrito()
+                    deleteCart()
                 })
                 .catch(err => console.log(err))
         }
