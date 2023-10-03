@@ -1,5 +1,7 @@
 import { useCartContext } from "../../Context/CartContext"
 import { Link } from "react-router-dom"
+import { ListCart } from "../ListCart/ListCart"
+
 import Formulario from "../Formulario/Formulario"
 
 //estilos
@@ -7,7 +9,7 @@ import './cartConteiner.css'
 
 const CartConteiner = () => {
 
-  const { cartList, vaciarCarrito, precioTotal, eliminarItem, id } = useCartContext()
+  const { cartList, deleteCart, precioTotal } = useCartContext()
 
   return (
     <>
@@ -16,27 +18,15 @@ const CartConteiner = () => {
 
         <div className="conteiner-cart">
           <div className="carrito">
-            <img className="carrito-img" src="/public/assets/nike-icono.svg" alt="" />
+            <img className="carrito-img" src="https://nikearprod.vtexassets.com/assets/vtex/assets-builder/nikearprod.store/2.0.63/icons/Assets_for_off%20platform/swoosh___33f7ffaf2fc124733c2c4a60a12a1160.svg" alt="" />
             <p className="titulo-carrito">Carrito</p>
           </div>
-          {cartList.map(prod => <div className="cart-product" key={prod.id}>
-            <img src={prod.img} className="w-25" />
-            <div className="cart-detail-product">
-              <p>
-                {prod.name}
-              </p>
-              <p>
-                SubTotal ${prod.price}
-              </p>
-              <p>
-                Cantidad: {prod.quantity}
-              </p>
-            </div>
-            <button className="button-eliminar" onClick={() => eliminarItem(prod.id)}>X</button>
-          </div>)}
+          <div>
+            <ListCart />
+          </div>
           {precioTotal() !== 0 && <p className="precio-total">Precio total = $ {precioTotal()}</p>}
           <div className="buttons">
-            <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+            <button onClick={deleteCart}>Vaciar Carrito</button>
           </div>
 
           <Formulario />
