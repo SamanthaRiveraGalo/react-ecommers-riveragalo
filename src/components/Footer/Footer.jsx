@@ -6,6 +6,10 @@ export const Footer = () => {
     return (
         <div className='footer'>
             <div className='footer-body'>
+                <figure>
+                    <img src="/assets/nike-jordan.svg" alt="imagen logo" />
+                </figure>
+
                 <div className='footer-ayuda'>
                     <p className='footer-title-ayuda'>Ayuda</p>
                     <p>Envios y entregas</p>

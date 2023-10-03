@@ -5,7 +5,7 @@ const CartWidget = () => {
   const { cantidadTotal } = useCartContext()
   return (
     <div>
-      <img src="/public/assets/shopping-bag.svg" alt="shopping bag" />
+      <img src="/assets/shopping-bag.svg" alt="shopping bag" />
       <span className='cart-span'>
         {cantidadTotal()}
       </span>

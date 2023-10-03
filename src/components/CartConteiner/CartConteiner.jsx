@@ -18,7 +18,7 @@ const CartConteiner = () => {
 
         <div className="conteiner-cart">
           <div className="carrito">
-            <img className="carrito-img" src="https://nikearprod.vtexassets.com/assets/vtex/assets-builder/nikearprod.store/2.0.63/icons/Assets_for_off%20platform/swoosh___33f7ffaf2fc124733c2c4a60a12a1160.svg" alt="" />
+            <img className="carrito-img" src="/assets/nike-icono.svg" alt="" />
             <p className="titulo-carrito">Carrito</p>
           </div>
           <div>
