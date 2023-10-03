@@ -13,7 +13,7 @@ export const Form = ({ handleOnChange, dataForm, error, validation }) => {
     const navigate = useNavigate()
 
     const handleAddOrder = async (evt) => {
-        
+
         evt.preventDefault()
 
         if (validation()) {
@@ -41,43 +41,52 @@ export const Form = ({ handleOnChange, dataForm, error, validation }) => {
             <form className='form' onSubmit={handleAddOrder}>
                 <h1>Formulario de Compra</h1>
                 <div className='conteiner-imput'>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Ingrese el nombre"
-                        value={dataForm.name}
-                        onChange={handleOnChange}
-                    />
-                    {error && error.name && <span>{error.name}</span>}
-                    <input
-                        type="text"
-                        name="lastname"
-                        placeholder="Ingrese su apellido"
-                        value={dataForm.lastname}
-                        onChange={handleOnChange}
-                    />
-                    {error && error.lastname && <span>{error.lastname}</span>}
+                    <div className='input'>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Ingrese el nombre"
+                            value={dataForm.name}
+                            onChange={handleOnChange}
+                        />
+                        {error && error.name && <span className='span-input'>{error.name}</span>}
+                    </div>
+                    <div className='input'>
+                        <input
+                            type="text"
+                            name="lastname"
+                            placeholder="Ingrese su apellido"
+                            value={dataForm.lastname}
+                            onChange={handleOnChange}
+                        />
+                        {error && error.lastname && <span className='span-input'>{error.lastname}</span>}
+                    </div>
                 </div>
                 <div className='conteiner-imput'>
-                    <input
-                        type="text"
-                        name="email"
-                        placeholder="Ingrese su email"
-                        value={dataForm.email}
-                        onChange={handleOnChange}
-                    />
-                    {error && error.email && <span>{error.email}</span>}
-                    <input
-                        type="text"
-                        name="phone"
-                        placeholder="Ingrese su numero de telefono"
-                        value={dataForm.phone}
-                        onChange={handleOnChange}
-                    />
-                    {error && error.phone && <span>{error.phone}</span>}
-
+                    <div className='input'>
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="Ingrese su email"
+                            value={dataForm.email}
+                            onChange={handleOnChange}
+                        />
+                        {error && error.email && <span className='span-input'>{error.email}</span>}
+                    </div>
+                    <div className='input'>
+                        <input
+                            type="text"
+                            name="phone"
+                            placeholder="Ingrese su numero de telefono"
+                            value={dataForm.phone}
+                            onChange={handleOnChange}
+                        />
+                        {error && error.phone && <span className='span-input'>{error.phone}</span>}
+                    </div>
                 </div>
+
                 <button className='boton-finalizar'>Finalizar Compra</button>
+
             </form>
         </div>
     )

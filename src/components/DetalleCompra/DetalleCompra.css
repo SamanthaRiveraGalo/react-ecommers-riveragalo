@@ -1,6 +1,7 @@
-.conteiner-detalle{
+.conteiner-detalle-compra{
     padding: 5rem 0;
     display: flex;
+    flex-direction: column;
     gap: 5rem;
 }
 

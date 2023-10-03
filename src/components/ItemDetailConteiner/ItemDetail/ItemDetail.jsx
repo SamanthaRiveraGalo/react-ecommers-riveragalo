@@ -1,7 +1,9 @@
 import { useState } from "react"
 import { useCartContext } from "../../../Context/CartContext"
-import ItemCount from "../../Counter/itemCount"
 import { Link } from "react-router-dom"
+
+import ItemCount from "../../Counter/itemCount"
+
 //Estilo
 import './ItemDetail.css'
 

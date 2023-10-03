@@ -7,7 +7,7 @@ import './DetalleCompra.css'
 const DetalleCompra = () => {
   const {id}= useParams()
   return (
-    <div className='conteiner-detalle'>
+    <div className='conteiner-detalle-compra'>
         <h1 className='compra-exitosa'>Su compra fue exitosa!</h1>
         {id !== '' && <h2 className='orden'> Su orden de compra es: {id}</h2>}
     </div>

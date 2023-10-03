@@ -1,7 +1,7 @@
 .form{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     padding: 2rem;
 }
 
@@ -11,8 +11,19 @@
     gap: 5rem;
 }
 
-.conteiner-imput > input {
-    width: 50%;
+.input{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input{
+    width: 75%;
+}
+
+.span-input{
+    color: #952323;
 }
 
 .boton-finalizar{

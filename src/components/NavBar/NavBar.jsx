@@ -1,11 +1,10 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
 
+//Estilo
 import './NavBar.css'
 
 const NavBar = () => {
@@ -27,15 +26,6 @@ const NavBar = () => {
                             <NavLink to='/category/mujer'className='category'>Mujer</NavLink>
 
                         </Nav>
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-light">Search</Button>
-                        </Form>
                     </Navbar.Collapse>
                     <Link to='/cart' className='cart'>
                         <CartWidget />
